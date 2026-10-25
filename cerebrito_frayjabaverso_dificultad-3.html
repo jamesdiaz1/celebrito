@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#100b18">
+<title>Cerebrito — Frayjabaverso</title>
+<style>
+:root{--bg:#0b0910;--panel:#17121f;--panel2:#21182b;--red:#e63950;--red2:#8e1830;--violet:#542b70;--ash:#c9c4d0;--muted:#a69eaf;--gold:#ffd166;--green:#7be0ad}
+*{box-sizing:border-box}html{background:var(--bg);color:#f7f2fb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2c1637 0%,#100b18 52%,#08070b 100%);overflow-x:hidden}button,input,select{font:inherit}button{min-height:48px;border:1px solid #6c344e;border-radius:12px;padding:11px 16px;color:#fff;background:linear-gradient(135deg,#92213b,#55245f);font-weight:750;cursor:pointer;touch-action:manipulation;transition:transform .12s,filter .12s}button:hover{filter:brightness(1.18)}button:active{transform:scale(.98)}button:disabled{opacity:.42;cursor:not-allowed}.secondary{background:#26202e;border-color:#51445d}.danger{background:#3b1825;border-color:#8e344b}.wrap{width:min(100% - 24px,980px);margin:0 auto;padding:16px 0 32px}.screen{display:none;animation:fade .3s ease}.screen.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.panel{background:linear-gradient(145deg,rgba(32,24,42,.96),rgba(17,13,23,.97));border:1px solid #49314e;border-radius:20px;padding:clamp(16px,4vw,28px);box-shadow:0 18px 50px #0006;margin:12px 0}.center{text-align:center}.eyebrow{color:#ff7186;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:850}.title{font-size:clamp(2.1rem,8vw,4.4rem);line-height:1;margin:10px 0;color:#fff;text-shadow:0 0 22px #b32753a8}.subtitle{color:#d5c7df;font-size:clamp(1rem,3vw,1.2rem);line-height:1.6}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:7px;text-align:left;margin:13px 0}.field label{font-weight:700;color:#e6dce9}.field input{width:100%;min-height:48px;padding:12px;border-radius:10px;background:#0d0a12;border:1px solid #65516c;color:#fff;outline:none}.field input:focus{border-color:#ff667d;box-shadow:0 0 0 3px #e6395028}.error{color:#ff8797;min-height:1.3em}.crest{display:inline-grid;place-items:center;width:70px;height:70px;border:2px solid #a12b48;border-radius:50%;background:radial-gradient(circle,#62203d,#160d20 70%);box-shadow:0 0 26px #e6395033;font-size:2rem;margin:4px auto 14px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:.05em}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#211827;border:1px solid #4b354f;border-radius:999px;padding:7px 11px;font-size:.9rem}.scene{position:relative;min-height:220px;overflow:hidden;border:1px solid #573044;border-radius:18px;background:linear-gradient(#180f25 0%,#2a152b 60%,#110d17 100%);margin:14px 0}.moon{position:absolute;right:12%;top:15px;width:62px;height:62px;border-radius:50%;background:#a72b43;box-shadow:0 0 38px #e639505e}.fog{position:absolute;bottom:0;width:140%;height:55px;background:linear-gradient(90deg,transparent,#9a78951a,#b8a5bd20,transparent);filter:blur(10px);animation:fog 12s linear infinite}.fog.two{bottom:27px;animation-duration:18s;animation-direction:reverse}@keyframes fog{from{transform:translateX(-35%)}to{transform:translateX(5%)}}.mountain{position:absolute;bottom:0;width:0;height:0;border-left:90px solid transparent;border-right:90px solid transparent;border-bottom:110px solid #17101d}.mountain.m1{left:3%}.mountain.m2{left:31%;border-bottom-color:#211326;border-left-width:120px;border-right-width:120px}.mountain.m3{right:0;border-bottom-color:#17101d;border-left-width:130px;border-right-width:130px}.castle{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:132px;height:94px;background:#0c0a10;border:2px solid #4c293c;border-bottom:0;clip-path:polygon(0 30%,18% 30%,18% 0,34% 0,34% 30%,66% 30%,66% 0,82% 0,82% 30%,100% 30%,100% 100%,0 100%)}.castle:after{content:"";position:absolute;bottom:0;left:54px;width:25px;height:45px;background:#9e2342;box-shadow:0 0 22px #f23d5a}.scene-label{position:absolute;left:14px;top:12px;font-size:.8rem;color:#d8c8df;background:#100b18b8;padding:6px 9px;border-radius:8px}.progress{height:9px;background:#33273a;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:linear-gradient(90deg,#92213b,#e63950,#a56ce0);width:0;transition:width .35s}.map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}.node{padding:10px 4px;background:#17121f;border:1px solid #45304a;border-radius:12px;text-align:center;color:#c8b8d1;min-height:72px;display:grid;place-items:center;font-size:.85rem}.node.done{border-color:#7be0ad;color:#7be0ad;background:#14231e}.node.current{border-color:#ff647c;box-shadow:0 0 18px #e6395033;color:#fff}.question{font-size:clamp(1.1rem,3.7vw,1.5rem);line-height:1.4;font-weight:800;margin:8px 0 16px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.answer{text-align:left;background:#211a2b;border:1px solid #57415f;min-height:56px}.answer.correct{border-color:#55c98e;background:#163326}.answer.wrong{border-color:#e63950;background:#3a1825}.feedback{padding:12px;border-radius:12px;background:#17121f;border:1px solid #4a354e;margin:12px 0;line-height:1.5}.feedback.good{border-color:#397e5e}.feedback.bad{border-color:#9b354b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1}.small{font-size:.88rem}.hidden{display:none!important}.city{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}.building{min-height:88px;background:#1c1525;border:1px dashed #65465f;border-radius:12px;display:grid;place-items:center;text-align:center;padding:8px;font-size:.88rem}.building.built{border-style:solid;border-color:#a74a61;background:linear-gradient(#381d35,#1a1421)}.building span{font-size:1.5rem}.scorebig{font-size:clamp(2.2rem,8vw,4rem);font-weight:950;color:#ff667d}.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.summary-cell{padding:13px;background:#211827;border-radius:12px;border:1px solid #49354d}.summary-cell strong{display:block;font-size:1.5rem;color:#ff8797}.foot{text-align:center;color:#877a8e;font-size:.8rem;padding:14px}.soundbtn{min-width:48px;padding:9px}.notice{color:#ffd9a0}.tag{display:inline-block;border-radius:999px;background:#321d3b;padding:4px 8px;color:#e4c5f5;font-size:.8rem}@media(max-width:620px){.grid,.answers{grid-template-columns:1fr}.map{grid-template-columns:repeat(3,minmax(0,1fr))}.city{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{align-items:flex-start}.panel{border-radius:16px}.scene{min-height:190px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section id="registration" class="screen active">
+ <div class="panel center">
+  <div class="crest" aria-label="Insignia Frayjabaverso">✦</div>
+  <div class="eyebrow">I. E. Fray Javier de Barcelona · Frayjabaverso</div>
+  <h1 class="title">Cerebrito</h1>
+  <p class="subtitle">Antes de cruzar el portal de las sombras, registra tu expedición.</p>
+  <form id="registerForm" novalidate>
+   <div class="field"><label for="studentName">Nombre completo *</label><input id="studentName" name="studentName" autocomplete="name" maxlength="80" required placeholder="Escribe tu nombre completo"></div>
+   <div class="field"><label for="gameName">Nombre del videojuego *</label><input id="gameName" name="gameName" maxlength="60" required value="Cerebrito"></div>
+   <div class="field"><label for="grade">Grado *</label><input id="grade" name="grade" maxlength="20" required placeholder="Ej. 5°"></div>
+   <p id="regError" class="error" role="alert"></p>
+   <button type="submit" style="width:100%">Registrar y entrar al portal</button>
+  </form>
+  <p class="muted small">Los datos se usan solo durante esta partida y no se guardan en el dispositivo.</p>
+ </div>
+</section>
+
+<section id="welcome" class="screen">
+ <div class="panel center">
+  <div class="crest">✦</div><div class="eyebrow">Una aventura del Frayjabaverso</div>
+  <h1 class="title" id="welcomeTitle">Cerebrito</h1>
+  <p class="subtitle"><em>«Aprender es la mejor aventura»</em></p>
+  <div class="scene" aria-label="Castillo oscuro bajo una luna roja"><div class="moon"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="mountain m3"></div><div class="castle"></div><div class="fog"></div><div class="fog two"></div><div class="scene-label">REINO DE LAS SOMBRAS</div></div>
+  <p>La luna roja apagó la luz del reino. Una persona exploradora deberá atravesar ruinas, resolver preguntas y vencer al Guardián de las Sombras. ¡Cada respuesta puede devolverle luz a una parte de la ciudad!</p>
+  <div class="grid" style="text-align:left">
+   <div class="feedback"><strong>Objetivo</strong><br>Consigue puntos y monedas respondiendo preguntas y construye una ciudad segura.</div>
+   <div class="feedback"><strong>Cómo jugar</strong><br>Toca una respuesta o usa las teclas 1–4. Lee la explicación, reintenta si fallas y avanza al siguiente reto.</div>
+   <div class="feedback"><strong>Tu expedición</strong><br>5 misiones educativas y 4 decisiones para reconstruir la ciudad. Duración aproximada: 5 minutos.</div>
+   <div class="feedback"><strong>Áreas</strong><br>Matemáticas, química, ciencias naturales, español, sociales e inglés. Nivel gradual para grados 1.º a 6.º.</div>
+  </div>
+  <p class="muted small">Creador: Fidel Castro · Grado 11</p>
+  <div class="feedback" style="text-align:left">
+   <label for="difficultySelect"><strong>Elige la dificultad para jugar</strong></label>
+   <select id="difficultySelect" style="display:block;width:100%;min-height:48px;margin-top:8px;padding:10px;border-radius:10px;background:#0d0a12;border:1px solid #65516c;color:#fff">
+    <option value="facil">Fácil · preguntas sencillas y más ayudas</option>
+    <option value="medio" selected>Medio · reto equilibrado</option>
+    <option value="dificil">Difícil · preguntas más exigentes</option>
+    <option value="extremo">Extremo · preguntas avanzadas y menos ayudas</option>
+   </select>
+   <p id="difficultyDescription" class="muted small">Reto equilibrado para practicar y aprender.</p>
+  </div>
+  <button id="startBtn" style="width:100%">Comenzar aventura</button>
+ </div>
+</section>
+
+<section id="game" class="screen">
+ <header class="topbar panel">
+  <div><div class="brand">✦ CEREBRITO <span class="tag">FRAYJABAVERSO</span></div><div class="muted small" id="playerLabel"></div></div>
+  <div class="stats"><span class="pill">⭐ <b id="score">0</b></span><span class="pill">🪙 <b id="coins">0</b></span><span class="pill">💡 <b id="lights">0</b></span><button id="soundBtn" class="secondary soundbtn" aria-label="Silenciar audio">♫</button></div>
+ </header>
+ <div class="scene"><div class="moon"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="mountain m3"></div><div class="castle"></div><div class="fog"></div><div class="fog two"></div><div class="scene-label" id="sceneLabel">PORTAL 1 · EL SENDERO</div></div>
+ <div class="panel">
+  <div class="topbar"><strong id="phaseTitle">Misión 1 de 5</strong><span class="muted small" id="phaseCount">Pregunta 1</span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+  <div class="map" id="mapNodes">
+   <div class="node current">🌲<br>Sendero</div><div class="node">🧪<br>Laboratorio</div><div class="node">🌿<br>Bosque</div><div class="node">📜<br>Biblioteca</div><div class="node">🏰<br>Castillo</div>
+  </div>
+  <div id="quizArea">
+   <div class="eyebrow" id="subjectLabel">Matemáticas</div>
+   <div class="question" id="questionText">Pregunta</div>
+   <div id="answers" class="answers"></div>
+   <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+   <div class="row" style="margin-top:12px"><button id="retryBtn" class="secondary hidden">Reintentar pregunta</button><button id="nextBtn" class="hidden">Continuar →</button></div>
+  </div>
+  <div id="practicalArea" class="hidden">
+   <div class="eyebrow">Caso práctico · Construye tu ciudad</div>
+   <h2 class="question" id="practicalTitle">Reconstruye la ciudad</h2>
+   <p id="practicalStory">Cada decisión cambia la ciudad.</p>
+   <div class="city" id="cityGrid"><div class="building">Solar vacío</div><div class="building">Solar vacío</div><div class="building">Solar vacío</div><div class="building">Solar vacío</div></div>
+   <div class="question" id="decisionText"></div><div id="decisionAnswers" class="answers"></div>
+   <div id="decisionFeedback" class="feedback hidden" role="status" aria-live="polite"></div>
+   <div class="row" style="margin-top:12px"><button id="decisionNext" class="hidden">Siguiente decisión →</button></div>
+  </div>
+  <div id="bossArea" class="hidden">
+   <div class="eyebrow">Reto final · Guardián de las Sombras</div>
+   <h2 class="question">El Guardián bloquea la última luz. ¡Usa lo aprendido!</h2>
+   <p>Responde esta última pregunta para decidir cuánta luz vuelve al reino.</p>
+   <div id="bossQuestion" class="question"></div><div id="bossAnswers" class="answers"></div>
+   <div id="bossFeedback" class="feedback hidden" role="status" aria-live="polite"></div>
+   <button id="finishBtn" class="hidden" style="width:100%;margin-top:12px">Ver resultados</button>
+  </div>
+ </div>
+ <p class="foot">Controles: toque, mouse o teclas 1–4 · El audio comienza tras tu interacción.</p>
+</section>
+
+<section id="final" class="screen">
+ <div class="panel center">
+  <div class="crest">✦</div><div class="eyebrow">Expedición terminada · Frayjabaverso</div>
+  <h1 class="title">La luz regresa</h1>
+  <p class="subtitle" id="finalGreeting"></p>
+  <div class="scorebig" id="finalScore">0 puntos</div>
+  <div class="summary-grid" style="text-align:left;margin:16px 0">
+   <div class="summary-cell"><span class="muted small">Calificación</span><strong id="finalGrade">1.0</strong><span id="performance">Bajo</span></div>
+   <div class="summary-cell"><span class="muted small">Retos superados</span><strong id="finalChallenges">0/10</strong></div>
+   <div class="summary-cell"><span class="muted small">Correctas</span><strong id="finalCorrect">0</strong></div>
+   <div class="summary-cell"><span class="muted small">Incorrectas</span><strong id="finalWrong">0</strong></div>
+   <div class="summary-cell"><span class="muted small">Monedas</span><strong id="finalCoins">0</strong></div>
+   <div class="summary-cell"><span class="muted small">Ciudad</span><strong id="finalCity">0/4</strong></div>
+  </div>
+  <div class="feedback" style="text-align:left"><strong>Conceptos practicados</strong><p id="learnedSummary"></p><strong>Recomendaciones para mejorar</strong><p id="recommendations"></p></div>
+  <button id="playAgain" style="width:100%">Volver a jugar</button>
+ </div>
+</section>
+<footer class="foot">I. E. Fray Javier de Barcelona · Cerebrito · «Aprender es la mejor aventura»</footer>
+</main>
+<script>
+'use strict';
+// Todos los datos personales viven únicamente en variables de esta página.
+const student = {name:'', game:'Cerebrito', grade:''};
+const state = {score:0,coins:0,lights:0,correct:0,wrong:0,answered:0,challengePassed:0,missedTopics:[],learned:new Set(),current:0,attempted:false,decision:0,city:[],audioOn:true,audioCtx:null,oscillators:[],gameStarted:false,difficulty:'medio',retryUsed:false};
+const $ = id => document.getElementById(id);
+const screens = ['registration','welcome','game','final'];
+function showScreen(id){screens.forEach(s=>$(s).classList.toggle('active',s===id));window.scrollTo({top:0,behavior:'smooth'});}
+function safeText(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+$('registerForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=$('studentName').value.trim(), game=$('gameName').value.trim(), grade=$('grade').value.trim();
+ if(name.length<3||!/\s/.test(name)){ $('regError').textContent='Escribe tu nombre completo (nombre y apellido).'; $('studentName').focus(); return; }
+ if(!game){$('regError').textContent='El nombre del videojuego es obligatorio.';$('gameName').focus();return;}
+ if(!grade){$('regError').textContent='Escribe tu grado para continuar.';$('grade').focus();return;}
+ student.name=name;student.game=game;student.grade=grade;
+ $('welcomeTitle').textContent=game;$('playerLabel').textContent=name+' · Grado '+grade;
+ $('regError').textContent='';showScreen('welcome');
+});
+
+$('difficultySelect').addEventListener('change',()=>{
+ state.difficulty=$('difficultySelect').value;
+ $('difficultyDescription').textContent=difficultyConfig[state.difficulty].description;
+});
+$('startBtn').addEventListener('click',()=>{
+ initAudio();state.gameStarted=true;
+ const variants=questionVariants[state.difficulty];
+ if(variants) variants.forEach((v,i)=>Object.assign(missions[i],v));
+ showScreen('game');renderQuestion();
+});
+const missions=[
+ {subject:'Matemáticas · Suma',scene:'PORTAL 1 · EL SENDERO',q:'Para encender una antorcha recoges 12 cristales y luego 7 más. ¿Cuántos tienes?',opts:['17','19','20','5'],a:1,ex:'12 + 7 = 19. Sumar significa juntar cantidades.',topic:'sumas'},
+ {subject:'Matemáticas · Multiplicación',scene:'PORTAL 2 · LABORATORIO',q:'Hay 4 cajas con 3 pociones luminosas en cada una. ¿Cuántas pociones hay en total?',opts:['7','10','12','43'],a:2,ex:'4 × 3 = 12. La multiplicación suma grupos iguales: 3 + 3 + 3 + 3.',topic:'multiplicación'},
+ {subject:'Ciencias naturales · Células',scene:'PORTAL 3 · BOSQUE OSCURO',q:'¿Cuál es la unidad básica de los seres vivos?',opts:['La roca','La célula','La nube','El río'],a:1,ex:'Los seres vivos están formados por una o muchas células.',topic:'células'},
+ {subject:'Español · Comprensión lectora',scene:'PORTAL 4 · BIBLIOTECA',q:'Lee: “Lina cuidó una planta y la regó cada mañana. Después de varios días, crecieron hojas nuevas”. ¿Por qué crecieron las hojas?',opts:['Porque Lina la cuidó','Porque era de piedra','Porque no recibió agua','Porque estaba dentro de una caja'],a:0,ex:'El texto dice que Lina cuidó y regó la planta. Usa las pistas de la lectura para responder.',topic:'comprensión lectora'},
+ {subject:'Sociales e inglés · Mundo',scene:'PORTAL 5 · CASTILLO',q:'¿Cuál es la capital de Colombia y cómo se dice “tres” en inglés?',opts:['Cali y tree','Bogotá y three','Medellín y free','Cartagena y ten'],a:1,ex:'Bogotá es la capital de Colombia. “Three” significa “tres” en inglés.',topic:'geografía e inglés'}
+];
+
+const difficultyConfig = {
+ facil:{label:'Fácil', bonus:80, penalty:0, description:'Preguntas sencillas, pistas claras y oportunidad de reintentar.', hint:true},
+ medio:{label:'Medio', bonus:100, penalty:0, description:'Reto equilibrado para practicar y aprender.', hint:true},
+ dificil:{label:'Difícil', bonus:125, penalty:0, description:'Preguntas más exigentes y menos pistas.', hint:false},
+ extremo:{label:'Extremo', bonus:150, penalty:0, description:'Reto avanzado: lee con cuidado; solo hay un intento de respuesta.', hint:false}
+};
+const questionVariants = {
+ facil:[
+  {q:'Tienes 2 cristales y encuentras 3 más. ¿Cuántos tienes?',opts:['4','5','6','1'],a:1,ex:'2 + 3 = 5. Sumar es juntar cantidades.'},
+  {q:'Hay 2 cajas con 2 pociones en cada una. ¿Cuántas pociones hay?',opts:['4','2','6','22'],a:0,ex:'2 × 2 = 4. Son dos grupos de dos.'},
+  {q:'¿Qué parte pequeña forma a los seres vivos?',opts:['La célula','La nube','La roca','La montaña'],a:0,ex:'La célula es la unidad básica de los seres vivos.'},
+  {q:'Lina regó su planta cada día y crecieron hojas. ¿Qué ayudó a la planta?',opts:['El cuidado y el agua','La basura','La oscuridad total','No regarla'],a:0,ex:'La lectura cuenta que Lina cuidó y regó la planta.'},
+  {q:'¿Cuál es la capital de Colombia y cómo se dice “dos” en inglés?',opts:['Bogotá y two','Cali y ten','Pasto y one','Neiva y blue'],a:0,ex:'Bogotá es la capital de Colombia; two significa dos.'}
+ ],
+ dificil:[
+  {q:'En una expedición recoges 38 cristales y gastas 17. ¿Cuántos quedan?',opts:['21','25','55','19'],a:0,ex:'38 − 17 = 21. Restar es quitar una cantidad de otra.'},
+  {q:'Hay 6 estantes con 4 frascos cada uno. ¿Cuántos frascos hay?',opts:['10','24','20','64'],a:1,ex:'6 × 4 = 24 frascos.'},
+  {q:'¿Qué estructura de la célula contiene gran parte del material genético?',opts:['Núcleo','Pared externa de una casa','Raíz','Pulmón'],a:0,ex:'En las células eucariotas, el núcleo contiene gran parte del material genético.'},
+  {q:'Lee: “Aunque llovía, Sara protegió las semillas; por eso germinaron”. ¿Qué relación expresa “por eso”?',opts:['Una consecuencia','Una pregunta','Una comparación de tamaños','Un saludo'],a:0,ex:'“Por eso” introduce una consecuencia de la acción anterior.'},
+  {q:'¿Cuál opción combina correctamente la capital de Colombia y “departamento” en inglés?',opts:['Bogotá y department','Cali y mountain','Medellín y river','Pasto y number'],a:0,ex:'Bogotá es la capital y “department” puede traducir “departamento” en el contexto administrativo colombiano.'}
+ ],
+ extremo:[
+  {q:'Una expedición tenía 48 cristales. Usa 3 grupos de 6. ¿Cuántos quedan?',opts:['30','18','36','12'],a:0,ex:'3 × 6 = 18; 48 − 18 = 30 cristales.'},
+  {q:'Una puerta muestra 3² símbolos y otra tiene 2³. ¿Cuántos símbolos hay en total?',opts:['17','13','12','10'],a:1,ex:'3² = 9 y 2³ = 8; 9 + 8 = 17. Revisa: la respuesta correcta es 17.'},
+  {q:'¿Qué grupo incluye organismos que fabrican su alimento usando luz?',opts:['Productores, como muchas plantas','Consumidores, como todos los hongos','Rocas y minerales','Solo los carnívoros'],a:0,ex:'Muchas plantas son productores: fabrican alimento mediante fotosíntesis.'},
+  {q:'Lee: “El guardián no abrió la puerta, sino que entregó una pista”. ¿Qué indica “sino que”?',opts:['Contraste entre dos acciones','Que una acción ocurrió antes de otra','Una cantidad exacta','Una ubicación'],a:0,ex:'“Sino que” contrapone la acción esperada con la que realmente ocurrió.'},
+  {q:'¿Cuál oración está correctamente traducida?',opts:['Three means tres','Green means cinco','Monday means agua','Book means árbol'],a:0,ex:'Three significa tres; las demás parejas no corresponden.'}
+ ]
+};
+
+const practical=[
+ {title:'Decisión 1 · Agua para el barrio',story:'La ciudad necesita agua limpia para sus casas. Elige el plan más responsable.',q:'¿Qué haces primero?',opts:['Tirar residuos al río para despejarlo','Proteger el río y organizar su limpieza','Cerrar todas las fuentes de agua','Usar agua sin revisar si está limpia'],a:1,ex:'Cuidar las fuentes de agua protege a las personas, los animales y las plantas.',icon:'💧',building:'Estación de agua',topic:'cuidado del agua'},
+ {title:'Decisión 2 · Mercado de la plaza',story:'La plaza tiene 3 puestos con 4 cestas de frutas cada uno. Debes calcular las cestas para repartirlas por igual.',q:'¿Cuántas cestas hay en total?',opts:['7','12','9','34'],a:1,ex:'3 × 4 = 12 cestas. Multiplicar permite contar grupos iguales rápidamente.',icon:'🍎',building:'Mercado',topic:'multiplicación'},
+ {title:'Decisión 3 · Mensaje del explorador',story:'Un letrero antiguo dice: “La fauna vive en su hábitat”. Debes elegir la frase que comunica la idea correctamente.',q:'¿Cuál oración está bien escrita y tiene sentido?',opts:['Los animales viven en su hábitat.','Los animales vive en su hábitat.','Los animales vivir su hábitat.','Los animal viven hábitat.'],a:0,ex:'“Los animales viven en su hábitat” concuerda en plural y expresa una idea completa.',icon:'📚',building:'Escuela',topic:'lectura y gramática'},
+ {title:'Decisión 4 · Jardín de la ciudad',story:'Quedan 15 semillas y quieres plantar 5 en cada fila. También debes pensar en el ecosistema.',q:'¿Cuántas filas completas puedes plantar y qué debes cuidar?',opts:['2 filas; dejar basura','3 filas; cuidar suelo y polinizadores','5 filas; arrancar las flores','10 filas; desperdiciar agua'],a:1,ex:'15 ÷ 5 = 3 filas. Las plantas necesitan suelo, agua y un ecosistema cuidado.',icon:'🌱',building:'Jardín vivo',topic:'división y ecosistemas'}
+];
+const boss={q:'Una puerta tiene 2² símbolos luminosos. ¿Cuántos símbolos hay? (2² significa 2 × 2)',opts:['2','3','4','8'],a:2,ex:'2² = 2 × 2 = 4. Una potencia indica multiplicar una base por sí misma.'};
+function beep(freq=440,duration=.13,type='sine',volume=.055){if(!state.audioOn)return;try{const ctx=state.audioCtx||(state.audioCtx=new (window.AudioContext||window.webkitAudioContext)());if(ctx.state==='suspended')ctx.resume();const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.setValueAtTime(freq,ctx.currentTime);g.gain.setValueAtTime(volume,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+duration);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+duration);}catch(e){/* El juego continúa aunque el audio no esté disponible. */}}
+function initAudio(){if(!state.audioCtx){try{state.audioCtx=new (window.AudioContext||window.webkitAudioContext)();}catch(e){state.audioOn=false;$('soundBtn').textContent='♪×';}}beep(220,.18,'square',.035);setTimeout(()=>beep(330,.18,'square',.025),130);}
+function sound(kind){if(kind==='good'){beep(660,.12,'square');setTimeout(()=>beep(880,.16,'square',.045),90);}else if(kind==='bad'){beep(170,.25,'sawtooth',.035);}else if(kind==='reward'){beep(440,.12,'triangle');setTimeout(()=>beep(660,.12,'triangle'),100);setTimeout(()=>beep(990,.18,'triangle'),200);}else{beep(110,.28,'sawtooth',.025);}}
+$('soundBtn').addEventListener('click',()=>{state.audioOn=!state.audioOn;$('soundBtn').textContent=state.audioOn?'♫':'♪×';$('soundBtn').setAttribute('aria-label',state.audioOn?'Silenciar audio':'Activar audio');if(state.audioOn){initAudio();}});
+function updateStats(){$('score').textContent=state.score;$('coins').textContent=state.coins;$('lights').textContent=state.lights;$('progressBar').style.width=(state.answered/10*100)+'%';}
+function makeChoices(container,opts,correct,onPick){container.innerHTML='';opts.forEach((opt,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=(i+1)+'. '+opt;b.addEventListener('click',()=>onPick(i,b),{once:true});container.appendChild(b);});}
+function lockChoices(container){container.querySelectorAll('button').forEach(b=>b.disabled=true);}
+function renderQuestion(){
+ $('quizArea').classList.remove('hidden');$('practicalArea').classList.add('hidden');$('bossArea').classList.add('hidden');
+ const m=missions[state.current];$('phaseTitle').textContent='Misión '+(state.current+1)+' de 5';$('phaseCount').textContent='Pregunta '+(state.current+1)+' / 10 retos';$('sceneLabel').textContent=m.scene;$('subjectLabel').textContent=m.subject;$('questionText').textContent=m.q;$('feedback').className='feedback hidden';$('retryBtn').classList.add('hidden');$('nextBtn').classList.add('hidden');state.attempted=false;
+ const map=$('mapNodes').children;Array.from(map).forEach((n,i)=>{n.classList.toggle('done',i<state.current);n.classList.toggle('current',i===state.current);});
+ makeChoices($('answers'),m.opts,m.a,(i,b)=>answerMission(i,b));
+}
+function answerMission(i,b){
+ if(state.attempted)return;state.attempted=true;state.answered++;const m=missions[state.current];lockChoices($('answers'));
+ const right=i===m.a;const buttons=$('answers').querySelectorAll('button');buttons[m.a].classList.add('correct');
+ const fb=$('feedback');fb.classList.remove('hidden');fb.classList.toggle('good',right);fb.classList.toggle('bad',!right);
+ if(right){state.score+=difficultyConfig[state.difficulty].bonus;state.coins+=5;state.lights++;state.correct++;state.challengePassed++;state.learned.add(m.topic);sound('good');fb.innerHTML='<strong>¡Correcto! +100 puntos y 5 monedas.</strong><br>'+m.ex;}
+ else{state.wrong++;state.missedTopics.push(m.topic);b.classList.add('wrong');sound('bad');fb.innerHTML='<strong>No pasa nada, explorador.</strong><br>'+m.ex+' '+(state.difficulty==='extremo'?'En dificultad extrema no hay reintento en esta pregunta.':'Puedes reintentar para practicar, pero el primer resultado cuenta en la evaluación.');if(state.difficulty!=='extremo')$('retryBtn').classList.remove('hidden');}
+ updateStats();$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=state.current===4?'Ir a construir la ciudad →':'Siguiente misión →';
+}
+$('retryBtn').addEventListener('click',()=>{const m=missions[state.current];$('feedback').className='feedback hidden';$('retryBtn').classList.add('hidden');makeChoices($('answers'),m.opts,m.a,(i,b)=>{if(i===m.a){b.classList.add('correct');state.score+=25;state.coins+=1;state.learned.add(m.topic);sound('good');$('feedback').className='feedback good';$('feedback').textContent='¡Lo conseguiste! +25 puntos de práctica. '+m.ex;updateStats();lockChoices($('answers'));$('retryBtn').classList.add('hidden');}else{b.classList.add('wrong');sound('bad');$('feedback').className='feedback bad';$('feedback').textContent='Prueba otra opción. Pista: '+m.ex;}});});
+$('nextBtn').addEventListener('click',()=>{if(state.current<4){state.current++;renderQuestion();}else renderPractical();});
+function renderPractical(){ $('quizArea').classList.add('hidden');$('practicalArea').classList.remove('hidden');$('bossArea').classList.add('hidden');$('phaseTitle').textContent='Caso práctico · Ciudad';$('phaseCount').textContent='Decisión '+(state.decision+1)+' / 4';$('sceneLabel').textContent='RECONSTRUCCIÓN DE LA CIUDAD';renderCity();renderDecision();}
+function renderCity(){const grid=$('cityGrid');grid.innerHTML='';for(let i=0;i<4;i++){const d=document.createElement('div');d.className='building'+(state.city[i]?' built':'');d.innerHTML=state.city[i]?'<span>'+state.city[i].icon+'</span><strong>'+state.city[i].name+'</strong>':'<span>▧</span><span>Solar vacío</span>';grid.appendChild(d);}}
+function renderDecision(){const d=practical[state.decision];$('practicalTitle').textContent=d.title;$('practicalStory').textContent=d.story;$('decisionText').textContent=d.q;$('decisionFeedback').className='feedback hidden';$('decisionNext').classList.add('hidden');$('phaseCount').textContent='Decisión '+(state.decision+1)+' / 4';makeChoices($('decisionAnswers'),d.opts,d.a,(i,b)=>answerDecision(i,b));}
+function answerDecision(i,b){const d=practical[state.decision];lockChoices($('decisionAnswers'));const right=i===d.a;const btns=$('decisionAnswers').querySelectorAll('button');btns[d.a].classList.add('correct');const fb=$('decisionFeedback');fb.classList.remove('hidden');fb.classList.toggle('good',right);fb.classList.toggle('bad',!right);state.answered++;
+ if(right){state.score+=125;state.coins+=7;state.lights++;state.correct++;state.challengePassed++;state.learned.add(d.topic);state.city[state.decision]={icon:d.icon,name:d.building};sound('reward');fb.innerHTML='<strong>¡Buena decisión! +125 puntos y 7 monedas.</strong><br>'+d.ex+' La ciudad gana una construcción.';}
+ else{state.wrong++;state.missedTopics.push(d.topic);b.classList.add('wrong');sound('bad');fb.innerHTML='<strong>La ciudad tendrá que aprender de esta decisión.</strong><br>'+d.ex+' No se construye esta parte todavía.';}
+ renderCity();updateStats();$('decisionNext').classList.remove('hidden');$('decisionNext').textContent=state.decision===3?'Enfrentar al Guardián →':'Siguiente decisión →';}
+$('decisionNext').addEventListener('click',()=>{if(state.decision<3){state.decision++;renderDecision();}else renderBoss();});
+function renderBoss(){$('practicalArea').classList.add('hidden');$('bossArea').classList.remove('hidden');$('phaseTitle').textContent='Reto final';$('phaseCount').textContent='Guardián de las Sombras';$('sceneLabel').textContent='EL TRONO DE LA LUNA ROJA';$('bossQuestion').textContent=boss.q;$('bossFeedback').className='feedback hidden';$('finishBtn').classList.add('hidden');makeChoices($('bossAnswers'),boss.opts,boss.a,(i,b)=>{lockChoices($('bossAnswers'));state.answered++;const right=i===boss.a;const btns=$('bossAnswers').querySelectorAll('button');btns[boss.a].classList.add('correct');const fb=$('bossFeedback');fb.classList.remove('hidden');fb.classList.toggle('good',right);fb.classList.toggle('bad',!right);if(right){state.score+=150;state.coins+=10;state.lights++;state.correct++;state.challengePassed++;state.learned.add('potencias');sound('reward');fb.innerHTML='<strong>¡El Guardián ha sido vencido! +150 puntos y 10 monedas.</strong><br>'+boss.ex;}else{state.wrong++;state.missedTopics.push('potencias');b.classList.add('wrong');sound('bad');fb.innerHTML='<strong>El Guardián sigue en pie, pero has aprendido algo.</strong><br>'+boss.ex;}updateStats();$('finishBtn').classList.remove('hidden');});}
+$('finishBtn').addEventListener('click',showResults);
+function showResults(){const total=state.correct+state.wrong;const ratio=total?state.correct/total:0;const grade=Math.max(1,Math.min(5,Math.round((1+4*ratio)*10)/10));let level=grade<3?'Bajo':grade<4?'Básico':grade<4.6?'Alto':'Superior';$('finalGreeting').textContent=student.name+' · '+student.game+' · Grado '+student.grade;$('finalScore').textContent=state.score+' puntos';$('finalGrade').textContent=grade.toFixed(1);$('performance').textContent=level;$('finalChallenges').textContent=state.challengePassed+'/10';$('finalCorrect').textContent=state.correct;$('finalWrong').textContent=state.wrong;$('finalCoins').textContent=state.coins;$('finalCity').textContent=state.city.filter(Boolean).length+'/4';
+ const learned=Array.from(state.learned);$('learnedSummary').textContent=learned.length?'Practicaste: '+learned.join(', ')+'. Las explicaciones de cada reto muestran cómo aplicar estos conceptos.':'Hoy exploraste varios temas. Revisa las explicaciones de las preguntas y vuelve a intentarlo para consolidar los conceptos.';
+ const missed=[...new Set(state.missedTopics)];$('recommendations').textContent=missed.length?'Repasa '+missed.join(', ')+'. Lee cada pregunta con calma, identifica los datos importantes y comprueba tu respuesta antes de elegir.':'¡Buen trabajo! Sigue practicando operaciones, lectura y ciencias para mantener tus conocimientos.';
+ showScreen('final');sound('event');
+}
+$('playAgain').addEventListener('click',()=>{missions.forEach((m,i)=>{const originals=[{subject:'Matemáticas · Suma',scene:'PORTAL 1 · EL SENDERO',q:'Para encender una antorcha recoges 12 cristales y luego 7 más. ¿Cuántos tienes?',opts:['17','19','20','5'],a:1,ex:'12 + 7 = 19. Sumar significa juntar cantidades.',topic:'sumas'},{subject:'Matemáticas · Multiplicación',scene:'PORTAL 2 · LABORATORIO',q:'Hay 4 cajas con 3 pociones luminosas en cada una. ¿Cuántas pociones hay en total?',opts:['7','10','12','43'],a:2,ex:'4 × 3 = 12. La multiplicación suma grupos iguales: 3 + 3 + 3 + 3.',topic:'multiplicación'},{subject:'Ciencias naturales · Células',scene:'PORTAL 3 · BOSQUE OSCURO',q:'¿Cuál es la unidad básica de los seres vivos?',opts:['La roca','La célula','La nube','El río'],a:1,ex:'Los seres vivos están formados por una o muchas células.',topic:'células'},{subject:'Español · Comprensión lectora',scene:'PORTAL 4 · BIBLIOTECA',q:'Lee: “Lina cuidó una planta y la regó cada mañana. Después de varios días, crecieron hojas nuevas”. ¿Por qué crecieron las hojas?',opts:['Porque Lina la cuidó','Porque era de piedra','Porque no recibió agua','Porque estaba dentro de una caja'],a:0,ex:'El texto dice que Lina cuidó y regó la planta. Usa las pistas de la lectura para responder.',topic:'comprensión lectora'},{subject:'Sociales e inglés · Mundo',scene:'PORTAL 5 · CASTILLO',q:'¿Cuál es la capital de Colombia y cómo se dice “tres” en inglés?',opts:['Cali y tree','Bogotá y three','Medellín y free','Cartagena y ten'],a:1,ex:'Bogotá es la capital de Colombia. “Three” significa “tres” en inglés.',topic:'geografía e inglés'}];Object.assign(m,originals[i]);});state.score=0;state.coins=0;state.lights=0;state.correct=0;state.wrong=0;state.answered=0;state.challengePassed=0;state.missedTopics=[];state.learned=new Set();state.current=0;state.decision=0;state.city=[];state.retryUsed=false;updateStats();const variants=questionVariants[state.difficulty];if(variants)variants.forEach((v,i)=>Object.assign(missions[i],v));showScreen('game');renderQuestion();initAudio();});
+document.addEventListener('keydown',e=>{if(!$('game').classList.contains('active'))return;if(e.key>='1'&&e.key<='4'){const visible=$('bossArea').classList.contains('hidden')?($('practicalArea').classList.contains('hidden')?$('answers'):$('decisionAnswers')):$('bossAnswers');const btn=visible.querySelectorAll('button:not(:disabled)')[Number(e.key)-1];if(btn)btn.click();}if(e.key==='Enter'){const n=$('nextBtn');if(!n.classList.contains('hidden'))n.click();}});
+document.addEventListener('touchend',function(e){const now=Date.now();if(now-(window.__lastTouch||0)<280)e.preventDefault();window.__lastTouch=now;},{passive:false});
+</script>
+</body>
+</html>
